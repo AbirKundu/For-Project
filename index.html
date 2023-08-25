@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOGIN FORM UI | ASMR Code</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>Login</h1>
+      <div class="input-container">
+        <input type="text" id="username" placeholder=" " />
+        <label for="username">
+          <i class="fas fa-user icon"></i> Username
+        </label>
+      </div>
+      <div class="input-container">
+        <input type="password" id="password" placeholder=" " />
+        <label for="password">
+          <i class="fas fa-lock icon"></i> Password
+        </label>
+      </div>
+
+      <a href="#" class="forgot-password">Forgot password?</a>
+
+      <button type="submit" onclick="showSpinner()">
+        <span class="btn-txt">Login</span>
+        <div class="spinner" id="spinner"></div>
+      </button>
+
+      <p class="register-link">
+        Don't have an account? <a href="#" class="register">Register</a>
+      </p>
+    </div>
+
+    <script>
+      function showSpinner() {
+        let spinner = document.getElementById("spinner");
+        let btnTxt = document.querySelector(".btn-txt");
+
+        spinner.style.display = "inline-block";
+        btnTxt.style.display = "none";
+
+        setTimeout(() => {
+          spinner.style.display = "none";
+          btnTxt.style.display = "inline-block";
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>

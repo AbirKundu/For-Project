@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url("./BUP.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.3);
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInMoveUp 0.7s forwards 0.5s;
+}
+
+@keyframes fadeInMoveUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  margin-bottom: 20px;
+  color: #2a328b;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 30px;
+  overflow: visible;
+}
+
+input {
+  width: 100%;
+  padding: 20px 10px 10px 10px;
+  border: 2px solid #2a328b;
+  border-radius: 5px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.9);
+  transition: border-color 0.3s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  color: #aaa;
+  pointer-events: none;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.icon {
+  margin-right: 5px;
+  font-size: 10px;
+  transition: color 0.3s ease;
+}
+
+input:focus + label,
+input:not(:placeholder-shown) + label {
+  top: 5px;
+  font-size: 12px;
+  color: #4745ab;
+}
+
+input:not(:focus):placeholder-shown + label {
+  top: 14px;
+  font-size: 16px;
+  color: #aaa;
+}
+
+.forgot-password,
+.register {
+  color: #2a328b;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #2a328b;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #4745ab;
+  transform: translateY(-3px);
+}
+
+.spinner {
+  display: none;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top: 3px solid white;
+  width: 8px;
+  height: 8px;
+  animation: spin 1s linear infinite;
+  margin-left: 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
